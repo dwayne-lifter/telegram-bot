@@ -1,5 +1,5 @@
 <?php
-    date_default_timezone_set("Asia/kolkata");
+    date_default_timezone_set("Asia/Manila");
     //Data From Webhook
     $content = file_get_contents("php://input");
     $update = json_decode($content, true);
@@ -8,7 +8,7 @@
     $id = $update["message"]["from"]["id"];
     $username = $update["message"]["from"]["username"];
     $firstname = $update["message"]["from"]["first_name"];
-    $bot_name = "" ;//your bot name
+    $bot_name = "l0gz" ;//your bot name
  /// for broadcasting in Channel
 $channel_id = "-1001351780832"; 
 
@@ -366,11 +366,9 @@ CURLOPT_RETURNTRANSFER => true,
 CURLOPT_FOLLOWLOCATION => true,
 CURLOPT_ENCODING => "------WebKitFormBoundaryv2WBBQPOwQhLOls0
 Content-Disposition: form-data; name="url"
-
 $shorturl
 ------WebKitFormBoundaryv2WBBQPOwQhLOls0
 Content-Disposition: form-data; name="domain"
-
 0
 ------WebKitFormBoundaryv2WBBQPOwQhLOls0--",
 CURLOPT_MAXREDIRS => 10,
@@ -410,14 +408,14 @@ send_MDmessage($chat_id, "***Input Url= $shorturl
 
      ///Send Message (Global)
     function send_message($chat_id, $message){
-        $apiToken =  "API_TOKEN";
+        $apiToken =  "1494360898:AAGG1v2NGe10W1kAl8Z5582Y8gbOZegO4I4";
         $text = urlencode($message);
         file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$chat_id&text=$text");
     }
     
 //Send Messages with Markdown (Global)
       function send_MDmessage($chat_id, $message){
-       $apiToken =  "API_TOKEN";
+       $apiToken =  "A1494360898:AAGG1v2NGe10W1kAl8Z5582Y8gbOZegO4I4";
         $text = urlencode($message);
         file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$chat_id&text=$text&parse_mode=Markdown");
     }
@@ -425,7 +423,7 @@ send_MDmessage($chat_id, "***Input Url= $shorturl
 
 ///Send Message to Channel
       function send_Cmessage($channel_id, $message){
-       $apiToken =  "API_TOKEN";
+       $apiToken =  "1494360898:AAGG1v2NGe10W1kAl8Z5582Y8gbOZegO4I4";
         $text = urlencode($message);
         file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$channel_id&text=$text");
     }
